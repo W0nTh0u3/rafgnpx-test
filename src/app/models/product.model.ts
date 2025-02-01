@@ -13,3 +13,11 @@ export interface Product {
 }
 
 export type Products = Product[];
+
+export interface Category {
+    id: string;
+    icon: string;
+    name: string;
+}
+
+export type Categories = Category[];

@@ -1,46 +1,35 @@
 <!-- Header with search and cart -->
 <header class="header">
     <button class="icon-button">
-        <span>🔍</span>
+        <span><mat-icon fontIcon="search"></mat-icon></span>
     </button>
     <h1 class="title">
-        MAKE HOME<br>
-        BEAUTIFUL
+        <span class="top">MAKE HOME</span><br>
+        <span class="bottom">BEAUTIFUL</span>
     </h1>
     <button class="icon-button">
         <a routerLink="/main/cart">
-            <span>🛒</span>
+            <span><mat-icon fontIcon="shopping_cart"></mat-icon></span>
         </a>
     </button>
 </header>
 
 <!-- Categories make dynamic later-->
 <div class="categories">
-    <button class="category-item active">
-        <span>⭐</span>
-        <span>Popular</span>
+    @for (category of categories; track category.id) {
+    <button class="category-item" [class.active]="activeCategory === category.id"
+        (click)="setActiveCategory(category.id)">
+        <div class="icon-container">
+            <img [src]="'assets/icons/' + category.icon + '.svg'" [alt]="category.icon">
+        </div>
+        <span>{{ category.name }}</span>
     </button>
-    <button class="category-item">
-        <span>🪑</span>
-        <span>Chair</span>
-    </button>
-    <button class="category-item">
-        <span>🪟</span>
-        <span>Table</span>
-    </button>
-    <button class="category-item">
-        <span>🛋️</span>
-        <span>Armchair</span>
-    </button>
-    <button class="category-item">
-        <span>🛏️</span>
-        <span>Bed</span>
-    </button>
+    }
 </div>
 
 <!-- Product Grid -->
 <div class="product-grid">
-    @for (product of products; track product.product_id) {
-        <product-card [product]="product"></product-card>
+    @for (product of $products | async; track product.product_id) {
+    <product-card [product]="product"></product-card>
     }
 </div>

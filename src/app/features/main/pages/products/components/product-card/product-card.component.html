@@ -1,4 +1,4 @@
-<div class="product-card">
+<div class="product-card" (click)="navigateToProduct(product)">
     <div class="image-container">
         <img [src]="product.main_image" [alt]="product.name">
         <es-button class="cart-button" size="small" variant="secondary" (click)="addToCart(product)">
