@@ -1,0 +1,70 @@
+:host {
+    display: block;
+    height: 100dvh;
+}
+
+.landing-container {
+    height: 100dvh;
+    background-image:
+        url('/assets/images/bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    margin-top: 6rem;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.cta-button {
+    display: block;
+    max-width: 400px;
+    margin: 0 2rem;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    margin-bottom: 4.5rem;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.cta-button:hover {
+    background-color: #333;
+}
+
+@media (min-width: 768px) {
+    .content {
+        margin-top: 6rem;
+        max-width: 600px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+}

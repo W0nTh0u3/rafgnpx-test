@@ -1,0 +1,16 @@
+<div class="register-container">
+    <app-auth-heading page="register"></app-auth-heading>
+    <!-- Register Form -->
+    <div class="register-form-container">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+            <es-input type="text" label="Name" formControlName="name" placeholder="Enter your name" />
+            <es-input type="email" label="Email" formControlName="email" placeholder="Enter your email" />
+            <es-input type="password" label="Password" formControlName="password" placeholder="Enter your password" />
+            <es-input type="password" label="Confirm Password" formControlName="confirmPassword" placeholder="Enter your password" />
+            <es-button type="submit" variant="primary" [disabled]="!registerForm.valid" [block]="true" class="register-button">
+                Sign up
+            </es-button>
+            <span class="bottom-text">Already have an account? <a href="auth/login" class="sign-in">Sign in</a></span>
+        </form>
+    </div>
+</div>

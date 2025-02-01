@@ -1,0 +1,22 @@
+<!-- <p>login works!</p>
+<es-input label="Email"></es-input>
+<es-button [disabled]="false" variant="secondary">Login</es-button> -->
+<div class="login-container">
+    <app-auth-heading page="login"></app-auth-heading>
+    <!-- Login Form -->
+    <div class="login-form-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+            <es-input type="email" label="Email" formControlName="email" placeholder="Enter your email" />
+            <es-input type="password" label="Password" formControlName="password" placeholder="Enter your password" />
+            <a href="https://google.com" class="forgot-password">
+                Forgot Password
+            </a>
+            <es-button type="submit" variant="primary" [disabled]="!loginForm.valid" [block]="true" class="login-button">
+                Log in
+            </es-button>
+            <a href="auth/register" class="sign-up">
+                Sign up
+            </a>
+        </form>
+    </div>
+</div>

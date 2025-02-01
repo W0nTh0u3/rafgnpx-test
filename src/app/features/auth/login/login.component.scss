@@ -1,0 +1,39 @@
+.login-form-container {
+    display: flex;
+    max-width: 400px;
+    padding: 2.4rem 1.25rem;
+    background: white;
+    box-shadow:
+        0 8px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-container {
+    padding: 2rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login-button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.sign-up, .forgot-password {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+}
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: white;
+}

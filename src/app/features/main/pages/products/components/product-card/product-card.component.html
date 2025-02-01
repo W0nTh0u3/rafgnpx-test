@@ -1,0 +1,12 @@
+<div class="product-card">
+    <div class="image-container">
+        <img [src]="product.main_image" [alt]="product.name">
+        <es-button class="cart-button" size="small" variant="secondary" (click)="addToCart(product)">
+            <mat-icon fontIcon="local_mall"></mat-icon>
+        </es-button>
+    </div>
+    <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <p>$ {{ product.price | number: '1.2-2' }}</p>
+    </div>
+</div>
