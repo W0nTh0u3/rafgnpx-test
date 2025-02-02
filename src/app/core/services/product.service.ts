@@ -7,7 +7,8 @@ import { PRODUCTS_MOCK } from '../../mock/products.mock';
 	providedIn: 'root'
 })
 export class ProductService {
-	private products: Products = PRODUCTS_MOCK;
+	private readonly products: Products = PRODUCTS_MOCK;
+	private readonly POPULAR_RATING_THRESHOLD = 4;
 
 	constructor() { }
 	getProducts(): Observable<Products> {
@@ -15,11 +16,25 @@ export class ProductService {
 	}
 
 	getProductsByCategory(category: string): Observable<Products> {
-		// const filteredProducts = this.products.filter(product => 
-		//   category === 'popular' ? product.category === 'popular' : product.category === category
-		// );
-		const filteredProducts = this.products; // TODO: filter by category
-		return of(filteredProducts);
+		const filteredProducts = this.products.filter(product => {
+			//? Filter by category (popular, chair, table, armchair, bed, lamp)
+			if (category === 'popular') {
+				return (product.rating || 0) >= this.POPULAR_RATING_THRESHOLD;
+			}
+			return product.type === category;
+		});
+		return of(this.sortProducts(filteredProducts));
+	}
+
+	private sortProducts(products: Product[]): Product[] {
+		return products.sort((a, b) => {
+			//? First sort by priority (lower first)
+			const priorityDiff = (a.priority || 0) - (b.priority || 0);
+			if (priorityDiff !== 0) return priorityDiff;
+
+			//? Then sort alphabetically by name
+			return a.name.localeCompare(b.name);
+		});
 	}
 
 	getProductById(id: string): Observable<Product | undefined> {

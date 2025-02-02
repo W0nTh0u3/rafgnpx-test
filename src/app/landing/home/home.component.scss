@@ -57,7 +57,7 @@
 @media (min-width: 768px) {
     .content {
         margin-top: 6rem;
-        max-width: 600px;
+        max-width: var(--max-width-view);
     }
 
     .title {

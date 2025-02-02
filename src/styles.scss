@@ -46,12 +46,14 @@ $enstack-test-theme: mat.define-theme((
 :root {
     --primary-color: #242424;   
     --secondary-color: #808080;
+    --sub-color: #E0E0E0;
     --disabled-color: #B3B3B3;
     --background-color: #F5F5F5;
     --success-color: #27AE60;
     --warning-color: #F2C94C;
     --danger-color: #E74C3C;
     --disabled-btn-color: #D9D9D9;
+    --max-width-view: 500px;
 }
 
 html, body {

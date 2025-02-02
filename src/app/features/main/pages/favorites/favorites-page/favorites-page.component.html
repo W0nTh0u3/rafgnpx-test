@@ -1,1 +1,24 @@
-<p>favorites-page works!</p>
+<div class="header">
+	<h3>Favorites</h3>
+</div>
+<div class="content">
+	@if (favorites.length === 0) {
+		<p>No favorites yet</p>
+	} @else {
+		@for (favorite of favorites; track favorite) {
+			@if (getProduct(favorite) | async) {
+				<div class="favorite-item">
+					<es-product-modify
+						[product]="getProduct(favorite) | async"
+						(close)="removeFavorite(favorite)"
+						[type]="type"
+						(addToCart)="addToCart(favorite)"
+					/>
+				</div>
+			}
+		}
+	}
+</div>
+<div class="actions">
+	<es-button [block]="true" (click)="addAllToCart()"> Add all to cart </es-button>
+</div>

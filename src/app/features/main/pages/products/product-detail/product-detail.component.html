@@ -1,1 +1,47 @@
-<p>product-detail works!</p>
+<div class="product-detail" *ngIf="product$ | async as product">
+    <!-- Header -->
+    <div class="back-button-container">
+        <button class="back-button" (click)="goBack()">
+            <mat-icon fontIcon="chevron_left"></mat-icon>
+        </button>
+    </div>
+
+    <!-- Product Image Carousel -->
+    <app-image-carousel
+        [images]="product.product_images"
+        [alt]="product.name"
+    ></app-image-carousel>
+
+    <!-- Product Info -->
+    <div class="product-info">
+        <div class="title-section">
+            <h1>{{ product.name }}</h1>
+            <div class="price-quantity">
+                <p class="price">$ {{ product.price | number: '1.2-2' }}</p>
+                <es-quantity-control [quantity]="quantity" [maxQuantity]="product.stock" (quantityChange)="setQuantity($event)"></es-quantity-control>
+            </div>
+        </div>
+
+        <!-- Rating -->
+        <div class="rating">
+            <div class="stars">
+                <mat-icon fontIcon="star"></mat-icon>
+                <span class="rating-value">{{ product.rating }}</span>
+            </div>
+            <span class="reviews">({{ product.review_count }} reviews)</span>
+        </div>
+
+        <!-- Description -->
+        <p class="description">{{ product.description }}</p>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <es-button class="bookmark-btn" [variant]="variantCheck(product.product_id)" (onClick)="toggleFavorite(product.product_id)">
+                <mat-icon fontIcon="bookmark_border"></mat-icon>
+            </es-button>
+            <es-button class="add-cart-btn" (onClick)="addToCart(product.product_id)" [disabled]="product.stock === 0" [block]="true">
+                Add to cart
+            </es-button>
+        </div>
+    </div>
+</div>

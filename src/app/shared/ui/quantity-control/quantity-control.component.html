@@ -1,0 +1,9 @@
+<div class="quantity-control">
+    <es-button size="small" variant="secondary" [iconOnly]="true" (click)="increaseQuantity()">
+        <mat-icon fontIcon="add"></mat-icon>
+    </es-button>
+    <span class="quantity">{{ quantity | number: '2.0' }}</span>
+    <es-button size="small" variant="secondary" [iconOnly]="true"(click)="decreaseQuantity()">
+        <mat-icon fontIcon="remove"></mat-icon>
+    </es-button>
+</div>

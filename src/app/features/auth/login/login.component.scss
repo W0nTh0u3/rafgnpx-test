@@ -14,11 +14,18 @@
     text-align: center;
 }
 
+.lockout-message {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    color: var(--danger-color);
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 
 .login-button {
     width: 100%;

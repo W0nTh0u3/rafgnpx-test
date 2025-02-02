@@ -15,11 +15,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         [class.small]="size === 'small'"
         [class.secondary]="variant === 'secondary'"
     >
-        @if (iconOnly) {
-            <span class="icon">→</span>
-        } @else {
             <ng-content></ng-content>
-        }
     </button>
     `,
     styles: `
@@ -35,7 +31,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         font-size: 0.875rem;
         background-color: var(--primary-color);
         color: white;
-        padding: 1rem 1.5rem;
+        padding: 1rem;
         border-radius: 8px;
         letter-spacing: 0.025em;
     }
@@ -84,6 +80,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
     .small.icon-only {
         width: 32px;
         height: 32px;
+        padding: 0;
     }
 
     .icon {

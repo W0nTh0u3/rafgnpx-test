@@ -1,1 +1,86 @@
-<p>cart-page works!</p>
+<div class="cart-container">
+	<!-- Header -->
+	<div class="header">
+		<button class="back-button">
+			<a routerLink="/main">
+				<mat-icon fontIcon="chevron_left"></mat-icon>
+			</a>
+		</button>
+		<h3>My cart</h3>
+		<div class="empty-button"></div>
+	</div>
+
+	<!-- Cart Items List -->
+	<div class="cart-items">
+		<div class="content">
+			@if (cart.length === 0) {
+				<p>Empty Cart</p>
+			} @else {
+				@for (item of cart; track item) {
+					@if (getProduct(item.product_id) | async) {
+						<div class="cart-item">
+							<es-product-modify
+								[product]="getProduct(item.product_id) | async"
+								(close)="removeFromCart(item.product_id)"
+								[type]="type"
+								[quantity]="item.quantity"
+								[maxQuantity]="
+									(getProduct(item.product_id) | async)
+										?.stock || 0
+								"
+								(quantityChange)="
+									updateQuantity(item.product_id, $event)
+								"
+							/>
+						</div>
+					}
+				}
+			}
+		</div>
+	</div>
+
+	<div class="actions">
+		<!-- Promo Code -->
+		<div>
+			<div class="promo-container">
+				<input
+					[(ngModel)]="promoCode"
+					(ngModelChange)="onPromoCodeChange($event)"
+					type="text"
+					[placeholder]="'Enter your promo code'"
+					class="promo-input"
+				/>
+				<button class="submit-button" (click)="applyPromoCode()">
+					<mat-icon fontIcon="chevron_right"></mat-icon>
+				</button>
+			</div>
+			@if (!isPromoCodeValid && promoCode.length > 0) {
+				<span class="invalid-error">Invalid code</span>
+			}
+		</div>
+
+		<!-- Total -->
+		<div class="cart-total">
+			<span>Total:</span>
+			<div>
+				@if (isPromoCodeValid && newTotalPrice > 0) {
+					<span class="total-amount strike"
+						>${{ totalPrice | async | number: "1.2-2" }}</span
+					>
+					<span class="promo-amount"
+						>${{ newTotalPrice | number: "1.2-2" }}</span
+					>
+				} @else {
+					<span class="total-amount"
+						>${{ totalPrice | async | number: "1.2-2" }}</span
+					>
+				}
+			</div>
+		</div>
+
+		<!-- Checkout Button -->
+		<es-button [block]="true" [routerLink]="['/main/cart/success']">
+			Check out
+		</es-button>
+	</div>
+</div>

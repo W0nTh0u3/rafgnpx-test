@@ -1,0 +1,12 @@
+<div class="image-carousel">
+    <div class="main-image">
+        <img [src]="images[currentIndex]" [alt]="alt">
+        <div class="image-dots-container">
+            <div class="image-dots">
+                @for (image of images; track $index) {
+                <button class="dot" [class.active]="$index === currentIndex" (click)="selectImage($index)"></button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

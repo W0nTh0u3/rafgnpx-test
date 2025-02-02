@@ -5,8 +5,9 @@ import { ProductCardComponent } from "../components/product-card/product-card.co
 import { PRODUCTS_MOCK } from '../../../../../mock/products.mock';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductService } from '../../../../../core/services/product.service';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../../../../core/services/cart.service';
 
 @Component({
 	selector: 'app-product-list',
@@ -24,11 +25,13 @@ export class ProductListComponent implements OnInit {
 		{ id: 'chair', icon: 'chair', name: 'Chair' },
 		{ id: 'table', icon: 'table', name: 'Table' },
 		{ id: 'armchair', icon: 'sofa', name: 'Armchair' },
-		{ id: 'bed', icon: 'bed', name: 'Bed' }
+		{ id: 'bed', icon: 'bed', name: 'Bed' },
+		{ id: 'lamp', icon: 'lamp', name: 'Lamp' }
 	];
 
 	constructor(
-		private productService: ProductService
+		private productService: ProductService,
+		private cartService: CartService
 	) { }
 
 	$products: Observable<Products> = of([]);
@@ -37,11 +40,18 @@ export class ProductListComponent implements OnInit {
 		this.loadProducts();
 	}
 
+	get cartItemsCount(): Observable<number | string> {
+		return this.cartService.$cartItemsCount.pipe(
+			map((count: number) => count > 99 ? '99+' : count)
+		);
+	}
+
 	loadProducts() {
 		this.$products = this.productService.getProductsByCategory(this.activeCategory);
 	}
 
 	setActiveCategory(categoryId: string) {
 		this.activeCategory = categoryId;
+		this.loadProducts();
 	}
 }

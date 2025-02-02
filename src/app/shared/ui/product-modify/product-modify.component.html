@@ -1,0 +1,45 @@
+<div class="product-preview">
+	<div class="preview-content">
+		<!-- Product Image and Info -->
+		<div class="product-info">
+			<img
+				[src]="product?.main_image"
+				[alt]="product?.name"
+				class="product-image"
+			/>
+			<div class="product-details">
+				<h3 class="product-name">{{ product?.name }}</h3>
+				<p class="product-price">
+					$ {{ product?.price | number: "1.2-2" }}
+				</p>
+				@if (type === "cart") {
+					<div class="quantity-control">
+						<es-quantity-control
+							[quantity]="quantity"
+							[maxQuantity]="maxQuantity"
+							(quantityChange)="onQuantityChange($event)"
+						/>
+					</div>
+				}
+			</div>
+			<div class="product-actions">
+				<!-- Close Button -->
+				<button class="close-button" (click)="onClose()">
+					<mat-icon fontIcon="highlight_off"></mat-icon>
+				</button>
+
+				@if (type === "favorite") {
+					<es-button
+						class="cart-button"
+						size="small"
+						variant="secondary"
+						(click)="onAddToCart(product)"
+						[disabled]="product?.stock === 0"
+					>
+						<mat-icon fontIcon="local_mall"></mat-icon>
+					</es-button>
+				}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,10 +1,11 @@
 import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
 	selector: 'es-input',
 	standalone: true,
-	imports: [FormsModule, ReactiveFormsModule],
+	imports: [FormsModule, ReactiveFormsModule, MatIconModule],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
@@ -38,10 +39,11 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModu
             tabindex="-1"
           >
             @if (showPassword) {
-              👁️
+              <mat-icon>visibility</mat-icon>
             } @else {
-              👁️‍🗨️
+              <mat-icon>visibility_off</mat-icon>
             }
+
           </button>
         }
       </div>

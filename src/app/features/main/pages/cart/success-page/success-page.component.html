@@ -1,1 +1,24 @@
-<p>success-page works!</p>
+<div class="success-container">
+	<h1 class="success-title">SUCCESS!</h1>
+
+	<div class="success-illustration">
+		<img
+			src="assets/icons/Graphics.svg"
+			alt="Success Illustration"
+		/>
+	</div>
+
+	<div class="success-message">
+		<p>Your order will be delivered soon.</p>
+		<p>Thank you for choosing our app!</p>
+	</div>
+
+	<div class="action-buttons">
+		<es-button variant="primary" [block]="true"
+			>Track your orders</es-button
+		>
+		<es-button variant="primary" [block]="true" (click)="onBackToHome()">
+			Back to home
+		</es-button>
+	</div>
+</div>
