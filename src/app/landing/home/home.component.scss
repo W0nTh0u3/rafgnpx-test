@@ -3,6 +3,16 @@
     height: 100dvh;
 }
 
+@media (min-width: 540px) {
+    .landing-container {
+        background-image:
+            url('/assets/images/bg.png');
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        background-position: right !important;
+    }
+}
+
 .landing-container {
     height: 100dvh;
     background-image:
@@ -54,9 +64,9 @@
     background-color: #333;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 540px) {
     .content {
-        margin-top: 6rem;
+        margin: 6rem;
         max-width: var(--max-width-view);
     }
 
@@ -66,5 +76,9 @@
 
     .subtitle {
         font-size: 1.25rem;
+    }
+
+    .cta-button {
+        margin-left: 8rem;
     }
 }
