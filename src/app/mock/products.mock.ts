@@ -5,8 +5,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "lamp",
         "name": "Black Simple Lamp",
         "price": 12.00,
-        "main_image": 'https://uratex.com.ph/cdn/shop/files/Classic101beigefront_1200x1200.jpg?v=1705391339',
-        "product_images": ['https://uratex.com.ph/cdn/shop/files/Classic101beigefront_1200x1200.jpg?v=1705391339', 'https://www.officewarehouse.com.ph/__resources/_web_data_/products/products/images/6885.jpg', 'https://stancephilippines.com/cdn/shop/products/Mesh-Office-Chair-with-Headrest_1200x1200.png?v=1675306232'],
+        "main_image": 'https://picsum.photos/seed/lamp/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/lamp1/400/300',
+            'https://picsum.photos/seed/lamp2/400/300',
+            'https://picsum.photos/seed/lamp3/400/300'
+        ],
         "priority": 1,
         "product_id": "00000001",
         "description": `Experience the pinnacle of innovation with our latest flagship product. Meticulously crafted from premium materials, this versatile solution combines form and function in perfect harmony.
@@ -41,8 +45,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "table",
         "name": "Black Simple Table",
         "price": 12.61,
-        "main_image": 'https://www.officewarehouse.com.ph/__resources/_web_data_/products/products/images/6885.jpg',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/table/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/table1/400/300',
+            'https://picsum.photos/seed/table2/400/300',
+            'https://picsum.photos/seed/table3/400/300'
+        ],
         "priority": 1,
         "product_id": "00000002",
         "description": "Lorem Ipsum...",
@@ -54,8 +62,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "armchair",
         "name": "Black Simple Armchair",
         "price": 1.61,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/armchair/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/armchair1/400/300',
+            'https://picsum.photos/seed/armchair2/400/300',
+            'https://picsum.photos/seed/armchair3/400/300'
+        ],
         "priority": 0,
         "product_id": "00000003",
         "description": "Lorem Ipsum...",
@@ -67,8 +79,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "bed",
         "name": "Black Simple Bed",
         "price": 2.61,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/bed/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/bed1/400/300',
+            'https://picsum.photos/seed/bed2/400/300',
+            'https://picsum.photos/seed/bed3/400/300'
+        ],
         "priority": 10,
         "product_id": "00000004",
         "description": "Lorem Ipsum...",
@@ -80,8 +96,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "chair",
         "name": "White Simple Chair",
         "price": 99.0,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/chair/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/chair1/400/300',
+            'https://picsum.photos/seed/chair2/400/300',
+            'https://picsum.photos/seed/chair3/400/300'
+        ],
         "priority": 12,
         "product_id": "00000005",
         "description": "Lorem Ipsum...",
@@ -93,8 +113,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "table",
         "name": "White Simple Table",
         "price": 80.0,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/whitetable/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/whitetable1/400/300',
+            'https://picsum.photos/seed/whitetable2/400/300',
+            'https://picsum.photos/seed/whitetable3/400/300'
+        ],
         "priority": 0,
         "product_id": "00000006",
         "description": "Lorem Ipsum...",
@@ -106,8 +130,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "armchair",
         "name": "White Simple Armchair",
         "price": 1000000.50,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/whitearmchair/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/whitearmchair1/400/300',
+            'https://picsum.photos/seed/whitearmchair2/400/300',
+            'https://picsum.photos/seed/whitearmchair3/400/300'
+        ],
         "priority": 0,
         "product_id": "00000007",
         "description": "Lorem Ipsum...",
@@ -119,8 +147,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "armchair",
         "name": "White Simple Armchair",
         "price": 1000000.50,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/whitearmchair/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/whitearmchair1/400/300',
+            'https://picsum.photos/seed/whitearmchair2/400/300',
+            'https://picsum.photos/seed/whitearmchair3/400/300'
+        ],
         "priority": 0,
         "product_id": "00000008",
         "description": "Lorem Ipsum...",
@@ -132,8 +164,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "armchair",
         "name": "White Simple Armchair",
         "price": 1000000.50,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/whitearmchair/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/whitearmchair1/400/300',
+            'https://picsum.photos/seed/whitearmchair2/400/300',
+            'https://picsum.photos/seed/whitearmchair3/400/300'
+        ],
         "priority": 0,
         "product_id": "00000009",
         "description": "Lorem Ipsum...",
@@ -145,8 +181,12 @@ export const PRODUCTS_MOCK: Products = [
         "type": "armchair",
         "name": "White Simple Armchair",
         "price": 1000000.50,
-        "main_image": 'url',
-        "product_images": ['url', 'url', 'url'],
+        "main_image": 'https://picsum.photos/seed/whitearmchair/400/300',
+        "product_images": [
+            'https://picsum.photos/seed/whitearmchair1/400/300',
+            'https://picsum.photos/seed/whitearmchair2/400/300',
+            'https://picsum.photos/seed/whitearmchair3/400/300'
+        ],
         "priority": 0,
         "product_id": "00000010",
         "description": "Lorem Ipsum...",
